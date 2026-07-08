@@ -41,9 +41,35 @@ featured episode has.
 ### 4. Publish with GitHub Pages
 One-time repo setting: **Settings → Pages → Source: GitHub Actions**.
 After that, every push to `main` deploys automatically via
-`.github/workflows/deploy-pages.yml`. To use the `darrylkincy.com` domain,
-add it under **Settings → Pages → Custom domain** and point the domain's DNS
-at GitHub Pages.
+`.github/workflows/deploy-pages.yml`. The site appears at
+`https://dkincy.github.io/darrylkincy-website/`.
+
+### 5. Connect darrylkincy.com (after the Ionos migration finishes)
+GitHub Pages keeps hosting the site for free; Ionos only holds the domain
+and points it at GitHub. Do this once the domain has fully moved from
+GoDaddy to Ionos (and after step 4 — the site must be deployed first):
+
+**A. In Ionos** — log in at ionos.com → **Domains & SSL** →
+`darrylkincy.com` → **DNS** (or "Adjust DNS settings"):
+
+1. Delete any leftover A records or website-forwarding records that came
+   over from GoDaddy for `@` (the bare domain).
+2. Add four **A records**, each with host `@`, pointing to GitHub Pages:
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
+3. Add one **CNAME record**: host `www` → value `dkincy.github.io`
+   (delete any existing `www` record first).
+
+Leave MX/email records alone — this only touches where the website points.
+
+**B. In GitHub** — repo → **Settings → Pages → Custom domain** → type
+`darrylkincy.com` → **Save**. GitHub runs a DNS check (green check when the
+Ionos records have propagated — minutes to a few hours). When the
+**Enforce HTTPS** checkbox becomes clickable, tick it. The free security
+certificate can take up to ~24 hours; after that the site is live at
+`https://darrylkincy.com` and `https://www.darrylkincy.com`.
 
 ## Editing copy
 All copy lives in `index.html` in clearly-labeled sections (ROUND 1–4).
