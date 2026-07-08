@@ -16,7 +16,7 @@ const CONFIG = {
 
   // The email address inquiry buttons should open a message to.
   // Leave empty ("") to send inquiries to your LinkedIn profile instead.
-  CONTACT_EMAIL: "",
+  CONTACT_EMAIL: "dkcoco1@gmail.com",
 
   // Fallback for inquiries while CONTACT_EMAIL is empty.
   LINKEDIN_URL: "https://www.linkedin.com/in/darryl-kincy-10448619/",
