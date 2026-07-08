@@ -16,16 +16,13 @@ python3 -m http.server 8000
 
 ## Things to finish wiring up (one-time)
 
-### 1. Swap in real photos
-Search `index.html` for `PHOTO SWAP`. Replace the `photo-placeholder` div
-inside each `photo-frame` with a real image, e.g.:
-
-```html
-<img src="assets/img/darryl-hero.jpg" alt="Darryl Kincy">
-```
-
-Put images in `assets/img/` (create the folder). The hero portrait looks best
-as a 4:5 vertical crop.
+### 1. Photos (done — easy to swap)
+Real photos live in `assets/img/` and are already placed: hero
+(`hero-skills-camp.jpg`), Story timeline (`story-speaking.jpg`,
+`story-student.jpg`), photo band (`band-classroom-group.jpg`), and The Fight
+(`fight-session.jpg`). To change any of them, drop a new image in
+`assets/img/` and update the matching `src` in `index.html` (the hero one is
+marked `PHOTO SWAP`; a 4:5 vertical crop looks best there).
 
 ### 2. Connect the email signup
 Open `js/main.js` — everything lives in the `CONFIG` block at the top:
