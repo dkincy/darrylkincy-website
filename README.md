@@ -23,18 +23,12 @@ When the headshot is ready, upload it to `assets/img/` (GitHub → this branch �
 `PHOTO SWAP: headshot` and change the `src` to the new filename. A 4:5
 vertical crop looks best in the frame.
 
-### 2. Add the four YouTube videos
-In `index.html`, the **Watch & Learn** section has four labeled video slots:
-
-1. You Gotta Be "Coachable"!
-2. If You Don't Quit on the Coach…
-3. Taking The Lead Generation
-4. Mentor-Coaching in Action
-
-For each one: paste the YouTube video ID into `data-video-id` (the part of the
-link after `watch?v=`), remove the `disabled` attribute and the
-`yt-facade--empty` class. The video then loads right on the page when a
-visitor clicks play.
+### 2. YouTube videos (done — easy to swap)
+The four **Watch & Learn** slots are wired to Darryl's videos and load right
+on the page when a visitor clicks play. To change one, edit its slot in
+`index.html`: swap the YouTube video ID in `data-video-id` (the part of the
+link after `watch?v=` or `shorts/`) and in the thumbnail URL on the line
+below it.
 
 ### 3. Contact email & form
 Open `js/main.js` — everything lives in the `CONFIG` block at the top:

@@ -293,6 +293,12 @@ body.is-loaded .hero__name-line--gold > span { transition-delay: 0.12s; }
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 64px;
+  transition: transform 0.25s ease;
+}
+
+.yt-facade:hover .yt-facade__play,
+.yt-facade:focus-visible .yt-facade__play {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .yt-facade--empty {
