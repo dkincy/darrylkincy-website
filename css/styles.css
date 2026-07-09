@@ -1,19 +1,19 @@
 /* =============================================================================
    DARRYL KINCY | MENTOR-COACH FOR TEEN BOYS  ·  Taking The Lead Generation
-   Design: warm white canvas, gold headlines, soft-gray display type.
+   Design: near-black canvas, bright gold headlines, white body text.
    ============================================================================= */
 
 /* ----------------------------- Design tokens ------------------------------ */
 :root {
-  --paper: #FDFCF9;          /* page background */
-  --paper-tint: #F8F5EE;     /* alternating section background */
-  --ink: #3E3E3E;            /* body text */
-  --ink-soft: #6B6B6B;       /* secondary text */
-  --gold: #A5821E;           /* brand gold (headlines, accents) */
-  --gold-deep: #8C6D14;      /* hover / emphasis gold */
-  --gold-hairline: #E4D9B8;  /* thin rules */
-  --display-gray: #B9B9B9;   /* big display headlines */
-  --card: #FFFFFF;
+  --paper: #171512;                          /* page background */
+  --paper-tint: #201D18;                     /* alternating section background */
+  --ink: #F0EDE6;                            /* body text */
+  --ink-soft: #BDB7AA;                       /* secondary text */
+  --gold: #E9B942;                           /* brand gold (headlines, accents) */
+  --gold-deep: #F4CE6E;                      /* hover / emphasis gold */
+  --gold-hairline: rgba(233, 185, 66, 0.3);  /* thin rules */
+  --display-gray: #E9B942;                   /* big display headlines (gold on dark) */
+  --card: #23201A;
 
   --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -68,7 +68,7 @@ a:hover { color: var(--gold); }
 }
 
 .display--statement { text-transform: none; letter-spacing: 0; }
-.display em { font-style: normal; color: var(--gold); }
+.display em { font-style: normal; color: #FFFFFF; }
 
 .lede { max-width: var(--measure); margin-bottom: 1.15rem; }
 
@@ -86,8 +86,8 @@ a:hover { color: var(--gold); }
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.btn--primary { background: var(--gold); color: #fff; }
-.btn--primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: #fff; }
+.btn--primary { background: var(--gold); color: #1B1815; }
+.btn--primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: #1B1815; }
 
 /* ---------------------------------- Nav ----------------------------------- */
 .nav {
@@ -98,7 +98,7 @@ a:hover { color: var(--gold); }
   align-items: center;
   gap: 2.5rem;
   padding: 1.1rem var(--pad-x);
-  background: rgba(253, 252, 249, 0.94);
+  background: rgba(23, 21, 18, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--gold-hairline);
 }
@@ -204,9 +204,9 @@ body.is-loaded .hero__name-line--gold > span { transition-delay: 0.12s; }
 .hero__bio { max-width: 34rem; margin-bottom: 2rem; }
 
 .portrait-frame {
-  background: #fff;
+  background: var(--card);
   padding: 0.6rem 0.6rem 1.1rem;
-  box-shadow: 0 18px 45px rgba(60, 50, 20, 0.14);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
   border: 1px solid var(--gold-hairline);
 }
 .portrait-frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
@@ -302,7 +302,7 @@ body.is-loaded .hero__name-line--gold > span { transition-delay: 0.12s; }
 }
 
 .yt-facade--empty {
-  background: repeating-linear-gradient(-45deg, #F4F0E6 0 14px, #EFEADD 14px 28px);
+  background: repeating-linear-gradient(-45deg, #24211B 0 14px, #1D1B16 14px 28px);
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -450,7 +450,7 @@ body.is-loaded .hero__name-line--gold > span { transition-delay: 0.12s; }
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.24em;
-  color: #fff;
+  color: #1B1815;
   background: var(--gold);
   padding: 0.35rem 0.8rem;
 }
@@ -538,12 +538,12 @@ body.is-loaded .hero__name-line--gold > span { transition-delay: 0.12s; }
   font: inherit;
   color: var(--ink);
   padding: 0.85rem 1rem;
-  background: #fff;
-  border: 1px solid #D8D2C2;
+  background: #14120F;
+  border: 1px solid #40392A;
   border-radius: 2px;
 }
 .field input::placeholder,
-.field textarea::placeholder { color: #A9A395; }
+.field textarea::placeholder { color: #7E7767; }
 .field input:focus,
 .field textarea:focus { outline: 2px solid var(--gold); outline-offset: 0; border-color: var(--gold); }
 
