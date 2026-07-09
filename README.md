@@ -16,12 +16,11 @@ python3 -m http.server 8000
 
 ## Things to finish wiring up (one-time)
 
-### 1. Swap in the black-and-white headshot
-The hero currently uses a stand-in photo (`assets/img/hero-skills-camp.jpg`).
-When the headshot is ready, upload it to `assets/img/` (GitHub → this branch →
-**Add file → Upload files**), then in `index.html` find the comment marked
-`PHOTO SWAP: headshot` and change the `src` to the new filename. A 4:5
-vertical crop looks best in the frame.
+### 1. Hero photo (done — easy to swap)
+The hero shows the black-and-white headshot (`assets/img/headshot-bw.jpg`).
+To change it, upload a new image to `assets/img/` (GitHub → **Add file →
+Upload files**) and update the `src` of the hero `<img>` in `index.html`.
+A 4:5 vertical crop looks best in the frame.
 
 ### 2. YouTube videos (done — easy to swap)
 The four **Watch & Learn** slots are wired to Darryl's videos and load right
