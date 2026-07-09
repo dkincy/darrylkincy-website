@@ -1,9 +1,9 @@
-# darrylkincy.com — "In His Corner"
+# darrylkincy.com — Taking The Lead Generation
 
-Single-page personal-brand site for **Darryl Kincy**, youth mentor & educator.
-A cinematic scroll journey built on the cornerman metaphor: hero → story →
-the fight → the KOrnerman podcast → offers → email signup, all stitched
-together by a red "corner rope" line that draws itself as you scroll.
+Single-page site for **Darryl Kincy | Mentor-Coach for Teen Boys**, the face of
+**Taking The Lead Generation**, his 501(c)(3) non-profit. Clean white-and-gold
+design: hero → who we are → watch & learn → workshop topics → experience →
+testimonies → how the program works → ways to work together → contact.
 
 Zero dependencies. No build step. Plain HTML + CSS + JS.
 
@@ -16,38 +16,52 @@ python3 -m http.server 8000
 
 ## Things to finish wiring up (one-time)
 
-### 1. Photos (done — easy to swap)
-Real photos live in `assets/img/` and are already placed: hero
-(`hero-skills-camp.jpg`), Story timeline (`story-speaking.jpg`,
-`story-student.jpg`), photo band (`band-classroom-group.jpg`), and The Fight
-(`fight-session.jpg`). To change any of them, drop a new image in
-`assets/img/` and update the matching `src` in `index.html` (the hero one is
-marked `PHOTO SWAP`; a 4:5 vertical crop looks best there).
+### 1. Swap in the black-and-white headshot
+The hero currently uses a stand-in photo (`assets/img/hero-skills-camp.jpg`).
+When the headshot is ready, upload it to `assets/img/` (GitHub → this branch →
+**Add file → Upload files**), then in `index.html` find the comment marked
+`PHOTO SWAP: headshot` and change the `src` to the new filename. A 4:5
+vertical crop looks best in the frame.
 
-### 2. Connect the email signup
+### 2. Add the four YouTube videos
+In `index.html`, the **Watch & Learn** section has four labeled video slots:
+
+1. You Gotta Be "Coachable"!
+2. If You Don't Quit on the Coach…
+3. Taking The Lead Generation
+4. Mentor-Coaching in Action
+
+For each one: paste the YouTube video ID into `data-video-id` (the part of the
+link after `watch?v=`), remove the `disabled` attribute and the
+`yt-facade--empty` class. The video then loads right on the page when a
+visitor clicks play.
+
+### 3. Contact email & form
 Open `js/main.js` — everything lives in the `CONFIG` block at the top:
 
-- `EMAIL_FORM_ACTION` — paste your Mailchimp / Kit / Beehiiv form action URL.
-  Until it's set, the form shows a friendly "coming soon" message.
-- `CONTACT_EMAIL` — the address the "Start the Conversation" buttons should
-  email. Until it's set, those buttons link to Darryl's LinkedIn instead.
+- `CONTACT_EMAIL` — already set to `dkcoco1@gmail.com`. The inquiry buttons
+  and the contact form both use it.
+- `CONTACT_FORM_ACTION` — optional upgrade. Right now the contact form opens
+  the visitor's email app with a pre-filled message. To collect submissions
+  without relying on the visitor's email app, create a free form at
+  [formspree.io](https://formspree.io), and paste the form's endpoint URL
+  (looks like `https://formspree.io/f/XXXXXXXX`) here.
 
-### 3. Add podcast episodes
-In `index.html`, find the two `EPISODE SLOT` buttons and paste a YouTube video
-ID into `data-video-id` (the part after `watch?v=`). Remove the `disabled`
-attribute and the `yt-facade--empty` class, and add a thumbnail span like the
-featured episode has.
+### 4. Social links
+The contact section shows YouTube and LinkedIn circles. Instagram/Facebook
+can be added the same way in `index.html` (search for `contact__social`)
+once those page URLs exist.
 
-### 4. Publish with GitHub Pages
-One-time repo setting: **Settings → Pages → Source: GitHub Actions**.
-After that, every push to `main` deploys automatically via
+### 5. Publish with GitHub Pages
+One-time repo setting (already done): **Settings → Pages → Source: GitHub
+Actions**. Every push to `main` deploys automatically via
 `.github/workflows/deploy-pages.yml`. The site appears at
 `https://dkincy.github.io/darrylkincy-website/`.
 
-### 5. Connect darrylkincy.com (after the Ionos migration finishes)
+### 6. Connect darrylkincy.com (after the Ionos migration finishes)
 GitHub Pages keeps hosting the site for free; Ionos only holds the domain
 and points it at GitHub. Do this once the domain has fully moved from
-GoDaddy to Ionos (and after step 4 — the site must be deployed first):
+GoDaddy to Ionos (and after step 5 — the site must be deployed first):
 
 **A. In Ionos** — log in at ionos.com → **Domains & SSL** →
 `darrylkincy.com` → **DNS** (or "Adjust DNS settings"):
@@ -72,5 +86,6 @@ certificate can take up to ~24 hours; after that the site is live at
 `https://darrylkincy.com` and `https://www.darrylkincy.com`.
 
 ## Editing copy
-All copy lives in `index.html` in clearly-labeled sections (ROUND 1–4).
-The bio timeline in ROUND 1 was drafted from public sources — edit freely.
+All copy lives in `index.html` in clearly-labeled sections (Who We Are,
+Watch & Learn, Workshop Topics, Experience, Testimonies, How the Program
+Works, Ways to Work Together, Contact). Edit freely.

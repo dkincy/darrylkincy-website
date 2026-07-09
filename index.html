@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darryl Kincy — Every Young Man Needs Someone in His Corner</title>
-  <meta name="description" content="Darryl Kincy is a youth mentor and educator who works with middle and high school boys who are underperforming academically and struggling with behavior and focus. Mentoring, group coaching, and the KOrnerman podcast.">
-  <meta property="og:title" content="Darryl Kincy — Every Young Man Needs Someone in His Corner">
-  <meta property="og:description" content="Youth mentor & educator. 1-on-1 mentoring and group coaching for schools, districts, and youth programs. Host of the KOrnerman podcast.">
+  <title>Darryl Kincy | Mentor-Coach for Teen Boys</title>
+  <meta name="description" content="Taking The Lead Generation is a 501(c)(3) non-profit providing mentoring programs and services to middle and high school boys. Darryl Kincy — mentor-coach for teen boys, speaking to students since 1995.">
+  <meta property="og:title" content="Darryl Kincy | Mentor-Coach for Teen Boys">
+  <meta property="og:description" content="Taking The Lead Generation — a 501(c)(3) non-profit mentoring middle and high school boys. It takes strong men mentoring young men to make leaders.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://darrylkincy.com/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230C0C0F'/%3E%3Cpath d='M18 78V22h20c17 0 26 11 26 28S55 78 38 78H18zm14-12h6c9 0 12-7 12-16s-3-16-12-16h-6v32z' fill='%23E63946'/%3E%3Crect x='68' y='22' width='14' height='56' rx='3' fill='%23E8A33D'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FDFBF6'/%3E%3Ctext x='50' y='68' font-family='Arial Black,Arial,sans-serif' font-size='46' font-weight='900' fill='%23A5821E' text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -17,233 +17,260 @@
 </head>
 <body>
 
-  <!-- Scroll progress bar (echoes the corner-rope through-line) -->
-  <div class="progress-bar" aria-hidden="true"><span id="progressFill"></span></div>
-
-  <!-- Sticky nav — appears after the hero -->
+  <!-- Sticky nav -->
   <header class="nav" id="siteNav" aria-label="Site navigation">
-    <a class="nav__logo" href="#top">DARRYL<span>KINCY</span></a>
+    <a class="nav__logo" href="#top">TAKING THE<br>LEAD<br>GENERATION</a>
     <nav class="nav__links">
-      <a href="#story">The Story</a>
-      <a href="#fight">The Fight</a>
-      <a href="#podcast">The Podcast</a>
-      <a href="#offers">Work With Me</a>
-      <a class="nav__cta" href="#signup">Join the Corner</a>
+      <a href="#who">Who We Are</a>
+      <a href="#watch">Watch</a>
+      <a href="#program">Program</a>
+      <a href="#experience">Experience</a>
+      <a href="#testimonies">Testimonies</a>
+      <a href="#contact">Contact</a>
     </nav>
     <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#story">The Story</a>
-    <a href="#fight">The Fight</a>
-    <a href="#podcast">The Podcast</a>
-    <a href="#offers">Work With Me</a>
-    <a class="mobile-menu__cta" href="#signup">Join the Corner</a>
+    <a href="#who">Who We Are</a>
+    <a href="#watch">Watch</a>
+    <a href="#program">Program</a>
+    <a href="#experience">Experience</a>
+    <a href="#testimonies">Testimonies</a>
+    <a href="#contact">Contact</a>
   </div>
-
-  <!-- The corner rope: one red line drawn through the whole journey (built by JS) -->
-  <svg class="rope" id="ropeSvg" aria-hidden="true" focusable="false">
-    <path id="ropePathGhost" class="rope__ghost" d=""/>
-    <path id="ropePath" class="rope__line" d=""/>
-  </svg>
 
   <main id="top">
 
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="hero">
-      <div class="hero__spotlight" aria-hidden="true"></div>
-      <div class="hero__grain" aria-hidden="true"></div>
       <div class="hero__inner">
         <div class="hero__text">
-          <p class="hero__eyebrow reveal">DARRYL KINCY &mdash; YOUTH MENTOR &amp; EDUCATOR</p>
-          <h1 class="hero__title">
-            <span class="hero__line"><span>EVERY YOUNG MAN</span></span>
-            <span class="hero__line"><span>NEEDS SOMEONE</span></span>
-            <span class="hero__line hero__line--accent"><span>IN HIS CORNER.</span></span>
+          <p class="eyebrow reveal">MENTOR-COACH FOR TEEN BOYS</p>
+          <h1 class="hero__name">
+            <span class="hero__name-line hero__name-line--gray"><span>DARRYL</span></span>
+            <span class="hero__name-line hero__name-line--gold"><span>KINCY</span></span>
           </h1>
-          <p class="hero__sub reveal">I work with middle and high school boys who are underperforming in the classroom
-            and fighting battles with behavior and focus &mdash; and I train them to win.</p>
+          <p class="hero__bio reveal">Inspired by my own mentor, I began speaking to students in 1995.
+            My mentor, Al Hollingsworth &mdash; &ldquo;Coach&rdquo; &mdash; shared the life principles
+            that led to his success. I honor him by paying it forward, helping young men find their
+            own strength and become true men of character.</p>
           <div class="hero__ctas reveal">
-            <a class="btn btn--primary" href="#offers">Bring Darryl to Your Program</a>
-            <a class="btn btn--ghost" href="#story">Hear the Story</a>
+            <a class="btn btn--primary" href="#contact">Partner With Us</a>
           </div>
         </div>
-        <div class="hero__portrait reveal" aria-hidden="true">
-          <div class="photo-frame photo-frame--hero">
-            <!-- PHOTO SWAP: to change the hero image, replace the src below -->
-            <img src="assets/img/hero-skills-camp.jpg" alt="Darryl Kincy surrounded by young athletes at a night training camp">
-            <span class="photo-frame__tape photo-frame__tape--tl"></span>
-            <span class="photo-frame__tape photo-frame__tape--br"></span>
-          </div>
+        <div class="hero__portrait reveal">
+          <figure class="portrait-frame">
+            <!-- PHOTO SWAP: headshot — replace src with the black-and-white headshot when uploaded -->
+            <img src="assets/img/hero-skills-camp.jpg" alt="Darryl Kincy">
+          </figure>
         </div>
       </div>
-      <a class="hero__scrollcue" href="#story" aria-label="Scroll to the story">
-        <span class="hero__scrollcue-label">STEP INTO THE RING</span>
-        <span class="hero__scrollcue-line" aria-hidden="true"></span>
-      </a>
     </section>
 
-    <!-- ============================ ROUND 1 ============================= -->
-    <section class="section section--story" id="story">
-      <div class="section__head">
-        <span class="round-marker rope-anchor" data-side="left"><em>ROUND</em>1</span>
-        <h2 class="section__title reveal">THE STORY</h2>
-        <p class="section__kicker reveal">How a broadcast kid became the man in the corner.</p>
-      </div>
+    <!-- ============================ WHO WE ARE ========================== -->
+    <section class="section" id="who">
+      <p class="eyebrow reveal">WHO WE ARE</p>
+      <h2 class="display reveal">IT TAKES STRONG MEN MENTORING YOUNG MEN TO MAKE LEADERS.</h2>
+      <p class="lede reveal">Taking The Lead Generation is a 501(c)(3) non-profit with the primary
+        mission of providing programs and services to middle and high school boys. We believe no
+        young man should fail in life because he had no one to stand by him as a mentor.</p>
 
-      <ol class="timeline">
-        <li class="timeline__item reveal">
-          <span class="timeline__dot rope-anchor" data-side="left" aria-hidden="true"></span>
-          <h3>The Voice</h3>
-          <p>Darryl trained as a broadcast major, learning how to hold a room with nothing but a
-            message and a microphone. That voice became the tool of his life&rsquo;s work: making
-            young people actually <em>hear</em> that they matter.</p>
-        </li>
-        <li class="timeline__item reveal">
-          <span class="timeline__dot rope-anchor" data-side="right" aria-hidden="true"></span>
-          <h3>The Classrooms</h3>
-          <p>As a Community Relations Specialist at ITT Technical Institute in Sylmar, California,
-            Darryl walked into classrooms and assemblies across Los Angeles &mdash; building
-            bridges with school leaders and counselors, and showing students the value of what
-            comes after graduation. Powerful, informative, entertaining &mdash; and impossible
-            to ignore.</p>
-          <figure class="timeline__figure">
-            <img src="assets/img/story-speaking.jpg" alt="Darryl Kincy speaking to a high school class" loading="lazy">
-          </figure>
-        </li>
-        <li class="timeline__item reveal">
-          <span class="timeline__dot rope-anchor" data-side="left" aria-hidden="true"></span>
-          <h3>Think Differently</h3>
-          <p>Through Think Differently LLC, Darryl mentored 16&ndash;24 year-olds fighting to earn
-            their high school diplomas &mdash; working on the things a test can&rsquo;t measure:
-            character, discipline, and the belief that they were built for more.</p>
-          <figure class="timeline__figure">
-            <img src="assets/img/story-student.jpg" alt="A student with his backpack beside tables of books" loading="lazy">
-          </figure>
-        </li>
-        <li class="timeline__item reveal">
-          <span class="timeline__dot rope-anchor" data-side="right" aria-hidden="true"></span>
-          <h3>The KOrnerman</h3>
-          <p>In boxing, the cornerman is the one who patches you up between rounds, tells you the
-            truth, and sends you back out swinging. That&rsquo;s the role Darryl chose &mdash; in
-            mentoring rooms and on the <strong>KOrnerman podcast</strong>, where he sits down with
-            fathers, leaders, and fighters of every kind.</p>
-        </li>
+      <div class="stats">
+        <div class="stat reveal">
+          <span class="stat__value">1995</span>
+          <span class="stat__label">Speaking to students since</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__value">501(c)3</span>
+          <span class="stat__label">Registered non-profit organization</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CHARACTER IS KEY ======================= -->
+    <section class="section section--tint" id="character">
+      <p class="eyebrow reveal">CHARACTER IS KEY</p>
+      <h2 class="display display--statement reveal">We know from research that
+        <em>just one caring adult</em> in a teen boy&rsquo;s life has the potential to make a
+        significant impact on his future.</h2>
+      <p class="lede reveal">Trusting relationships, non-judgmental conversations, listening
+        &ldquo;to&rdquo; and not &ldquo;through&rdquo; mentees, and reflection are essential to the
+        learning and growth process for young men.</p>
+      <p class="lede reveal">Our organization delivers on this through introducing strong,
+        compassionate, and caring men of high character who will challenge and inspire the mentees.</p>
+    </section>
+
+    <!-- ========================== WATCH & LEARN ========================= -->
+    <section class="section" id="watch">
+      <p class="eyebrow reveal">WATCH &amp; LEARN</p>
+      <h2 class="display reveal">SEE THE MENTORSHIP IN ACTION</h2>
+
+      <div class="videos">
+        <!-- VIDEO SLOTS: paste a YouTube video ID into data-video-id (the part after watch?v=),
+             remove the disabled attribute and the yt-facade--empty class to activate a slot. -->
+        <figure class="video reveal">
+          <button class="yt-facade yt-facade--empty" data-video-id="" aria-label="Video coming soon: You Gotta Be Coachable!" disabled>
+            <span class="yt-facade__empty-mark" aria-hidden="true">&#9658;</span>
+            <span class="yt-facade__note">VIDEO COMING SOON</span>
+          </button>
+          <figcaption>You Gotta Be &ldquo;Coachable&rdquo;!</figcaption>
+        </figure>
+        <figure class="video reveal">
+          <button class="yt-facade yt-facade--empty" data-video-id="" aria-label="Video coming soon: If You Don't Quit on the Coach" disabled>
+            <span class="yt-facade__empty-mark" aria-hidden="true">&#9658;</span>
+            <span class="yt-facade__note">VIDEO COMING SOON</span>
+          </button>
+          <figcaption>If You Don&rsquo;t Quit on the Coach&hellip;</figcaption>
+        </figure>
+        <figure class="video reveal">
+          <button class="yt-facade yt-facade--empty" data-video-id="" aria-label="Video coming soon: Taking The Lead Generation" disabled>
+            <span class="yt-facade__empty-mark" aria-hidden="true">&#9658;</span>
+            <span class="yt-facade__note">VIDEO COMING SOON</span>
+          </button>
+          <figcaption>Taking The Lead Generation</figcaption>
+        </figure>
+        <figure class="video reveal">
+          <button class="yt-facade yt-facade--empty" data-video-id="" aria-label="Video coming soon: Mentor-Coaching in Action" disabled>
+            <span class="yt-facade__empty-mark" aria-hidden="true">&#9658;</span>
+            <span class="yt-facade__note">VIDEO COMING SOON</span>
+          </button>
+          <figcaption>Mentor-Coaching in Action</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================= WORKSHOP TOPICS ======================== -->
+    <section class="section section--tint" id="workshops">
+      <p class="eyebrow reveal">YOU GOTTA BE COACHABLE</p>
+      <h2 class="display reveal">WORKSHOP TOPICS</h2>
+
+      <ol class="topics">
+        <li class="topic reveal"><span class="topic__num">01</span>Where Do I Belong?</li>
+        <li class="topic reveal"><span class="topic__num">02</span>Why I Do What I Do</li>
+        <li class="topic reveal"><span class="topic__num">03</span>You Have Potential</li>
+        <li class="topic reveal"><span class="topic__num">04</span>Where Do I Want to Be</li>
+        <li class="topic reveal"><span class="topic__num">05</span>What&hellip; Why&hellip; How</li>
+        <li class="topic reveal"><span class="topic__num">06</span>Job vs. Career</li>
+        <li class="topic reveal"><span class="topic__num">07</span>Creating New Habits</li>
+        <li class="topic reveal"><span class="topic__num">08</span>The Success Formula</li>
+        <li class="topic reveal"><span class="topic__num">09</span>The Value of Discipline</li>
+        <li class="topic reveal"><span class="topic__num">10</span>Tools to Persist</li>
       </ol>
-
-      <blockquote class="pullquote reveal">
-        <p>&ldquo;A young man doesn&rsquo;t quit because the fight is too hard.<br>
-        He quits because nobody&rsquo;s in his corner.&rdquo;</p>
-        <cite>&mdash; Darryl Kincy</cite>
-      </blockquote>
     </section>
 
-    <!-- Full-width photo band -->
-    <section class="photo-band" aria-label="Darryl with a school group">
-      <img src="assets/img/band-classroom-group.jpg" alt="Darryl Kincy with a large group of students after a school session" loading="lazy">
-      <p class="photo-band__caption">EVERY ROOM. EVERY SCHOOL. EVERY KID.</p>
-    </section>
+    <!-- ============================ EXPERIENCE ========================== -->
+    <section class="section" id="experience">
+      <p class="eyebrow reveal">EXPERIENCE IS WHAT WE OFFER</p>
+      <h2 class="display reveal">PROGRAMS, SPEAKING ENGAGEMENTS, AND PARTNERSHIPS</h2>
 
-    <!-- ============================ ROUND 2 ============================= -->
-    <section class="section section--fight" id="fight">
-      <div class="section__head">
-        <span class="round-marker rope-anchor" data-side="right"><em>ROUND</em>2</span>
-        <h2 class="section__title reveal">THE FIGHT</h2>
-        <p class="section__kicker reveal">The boys every teacher knows &mdash; and nobody reaches.</p>
-      </div>
-
-      <div class="fight__intro reveal">
-        <p>There&rsquo;s a boy in every school: bright, restless, capable &mdash; and failing.
-          His grades don&rsquo;t match his mind. His behavior gets him sent out of the rooms he
-          most needs to be in. His focus is a fight he loses daily.</p>
-        <p><strong>Darryl specializes in that boy.</strong> He works with middle and high school
-          boys who are underperforming academically and struggling to control their actions,
-          behavior, and concentration &mdash; meeting them at their level, earning their respect,
-          and training them like athletes: with standards, with reps, and with someone in their
-          corner who refuses to give up on them.</p>
-      </div>
-
-      <div class="principles">
-        <article class="principle reveal">
-          <span class="principle__num">01</span>
-          <h3>BELIEVE</h3>
-          <p>Before a young man changes his behavior, he has to change what he believes about
-            himself. Darryl makes students believe in themselves and see the potential they have
-            to succeed &mdash; that&rsquo;s the first round of every engagement.</p>
-        </article>
-        <article class="principle reveal">
-          <span class="principle__num">02</span>
-          <h3>DISCIPLINE</h3>
-          <p>Self-control is a trainable skill, not a personality trait. Boys learn to own their
-            actions and their reactions &mdash; in the hallway, in the classroom, and at home.</p>
-        </article>
-        <article class="principle reveal">
-          <span class="principle__num">03</span>
-          <h3>FOCUS</h3>
-          <p>Concentration is built like conditioning: one rep at a time. Students build routines
-            and habits that turn scattered energy into academic progress teachers can see.</p>
-        </article>
-      </div>
-
-      <figure class="fight__photo reveal">
-        <img src="assets/img/fight-session.jpg" alt="A room full of young men gathered for a session with Darryl" loading="lazy">
-        <figcaption>Ready for a session &mdash; the rooms where the work happens.</figcaption>
-      </figure>
-
-      <p class="fight__outcome reveal">For schools, districts, and youth programs, the result is
-        the outcome you actually need: fewer removals from class, restored teacher relationships,
-        and boys re-engaged in their own education.</p>
-    </section>
-
-    <!-- ============================ ROUND 3 ============================= -->
-    <section class="section section--podcast" id="podcast">
-      <div class="section__head">
-        <span class="round-marker rope-anchor" data-side="left"><em>ROUND</em>3</span>
-        <h2 class="section__title reveal">THE CORNER MIC</h2>
-        <p class="section__kicker reveal">The KOrnerman podcast &mdash; real talk between rounds.</p>
-      </div>
-
-      <p class="podcast__intro reveal">Conversations with fathers, coaches, and leaders about the
-        fights that matter: raising young men, leading with love, and training to win at life.</p>
-
-      <div class="episodes">
-        <!-- Featured: lazy YouTube facade. Click loads the real embed. -->
-        <div class="episode episode--featured reveal">
-          <button class="yt-facade" data-video-id="5E8QvKkBoZQ" aria-label="Play featured KOrnerman video">
-            <span class="yt-facade__thumb" style="background-image:url('https://i.ytimg.com/vi/5E8QvKkBoZQ/hqdefault.jpg')"></span>
-            <span class="yt-facade__play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.4.3 34 .3 34 .3S12.6.3 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C.1 13 .1 24 .1 24s0 11 1.4 16.3c.8 2.9 3 5.2 5.9 6C12.6 47.7 34 47.7 34 47.7s21.4 0 26.6-1.4c2.9-.8 5.1-3.1 5.9-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#E63946"/><path d="M27 34.6L44.6 24 27 13.4v21.2z" fill="#fff"/></svg></span>
-            <span class="yt-facade__label">FEATURED &mdash; WATCH ON YOUTUBE</span>
-          </button>
+      <dl class="experience">
+        <div class="experience__row reveal">
+          <dt>WILLIS ISD RISE PROGRAM</dt>
+          <dd>School-based mentoring program where students, community volunteers, and educators
+            build long-term one-on-one relationships.</dd>
         </div>
-
-        <!-- EPISODE SLOTS: paste a YouTube video ID into data-video-id to activate a slot -->
-        <div class="episode reveal">
-          <button class="yt-facade yt-facade--empty" data-video-id="" aria-label="Episode slot — coming soon" disabled>
-            <span class="yt-facade__empty-mark" aria-hidden="true">&#9673;</span>
-            <span class="yt-facade__label">EPISODE SLOT &mdash; NEXT CONVERSATION</span>
-          </button>
+        <div class="experience__row reveal">
+          <dt>CADA</dt>
+          <dd>California Association of Directors of Activities &mdash; mini-keynote, camp speaker,
+            leadership conference speaker.</dd>
         </div>
-        <div class="episode reveal">
-          <button class="yt-facade yt-facade--empty" data-video-id="" aria-label="Episode slot — coming soon" disabled>
-            <span class="yt-facade__empty-mark" aria-hidden="true">&#9673;</span>
-            <span class="yt-facade__label">EPISODE SLOT &mdash; NEXT CONVERSATION</span>
-          </button>
+        <div class="experience__row reveal">
+          <dt>TUPE</dt>
+          <dd>Tobacco Use and Preventative Education &mdash; 10-week soft-skills program for
+            continuation high schools.</dd>
         </div>
-      </div>
+        <div class="experience__row reveal">
+          <dt>RIVERSIDE COUNTY</dt>
+          <dd>Contractor for youth pre-employment training.</dd>
+        </div>
+        <div class="experience__row reveal">
+          <dt>MCKINLEY SCHOOL</dt>
+          <dd>Pasadena &mdash; mentoring underachieving 8th grade boys.</dd>
+        </div>
+        <div class="experience__row reveal">
+          <dt>FCA</dt>
+          <dd>Fellowship of Christian Athletes &mdash; Klein ISD Fields of Faith speaker, high
+            school huddle speaker.</dd>
+        </div>
+        <div class="experience__row reveal">
+          <dt>SAN FERNANDO VALLEY YOUTH BUILD</dt>
+          <dd>Character coaching and mentoring workshops.</dd>
+        </div>
+        <div class="experience__row reveal">
+          <dt>STOCKTON JHS</dt>
+          <dd>Guest speaker for Principal Dr. Carlton Todd&rsquo;s &ldquo;Boyz 2 Men&rdquo; class.</dd>
+        </div>
+      </dl>
+    </section>
 
-      <div class="podcast__cta reveal">
-        <a class="btn btn--primary" href="https://www.youtube.com/@KOrnerman-train2win" target="_blank" rel="noopener">Subscribe on YouTube</a>
+    <!-- ============================ TESTIMONIES ========================= -->
+    <section class="section section--tint" id="testimonies">
+      <p class="eyebrow reveal">TESTIMONIES</p>
+      <h2 class="display reveal">WHAT COACHES AND PROGRAM DIRECTORS SAY</h2>
+
+      <div class="quotes">
+        <blockquote class="quote reveal">
+          <p>&ldquo;A great mentor can change lives, inspiring growth and success in ways that few
+            can imagine. I am happy to recommend that you consider working with a wonderful mentor
+            and friend, Mr. Darryl Kincy.&rdquo;</p>
+          <footer><cite>KIMBERLY ECKERT</cite><span>Retired Willis ISD RISE Coordinator</span></footer>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <p>&ldquo;Darryl is one of the most encouraging individuals that I have encountered in
+            11 years serving as the director of the program. He has the gift of motivating and
+            connecting with all students.&rdquo;</p>
+          <footer><cite>LEIGH ANN ELMORE</cite><span>RISE Mentor Director, 2014&ndash;2025</span></footer>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <p>&ldquo;Darryl stood out as an energetic Christian who is unashamed of the Gospel.
+            I strongly recommend Darryl if you are looking for a speaker who is energetic and
+            passionate about standing up for Biblical principles.&rdquo;</p>
+          <footer><cite>COACH RYAN COLEMAN</cite><span>FCA Sponsor, Klein-Collins HS</span></footer>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <p>&ldquo;I watched Darryl&rsquo;s exceptional ability to inspire and motivate his mentee
+            and others around him. He created an atmosphere where his mentee felt safe to express
+            himself.&rdquo;</p>
+          <footer><cite>GREG HAYES</cite><span>Retired Educator, Coach &amp; Author</span></footer>
+        </blockquote>
       </div>
     </section>
 
-    <!-- ============================ ROUND 4 ============================= -->
-    <section class="section section--offers" id="offers">
-      <div class="section__head">
-        <span class="round-marker rope-anchor" data-side="right"><em>ROUND</em>4</span>
-        <h2 class="section__title reveal">IN YOUR CORNER</h2>
-        <p class="section__kicker reveal">For schools, districts, youth programs &amp; nonprofits.</p>
+    <!-- ======================= HOW THE PROGRAM WORKS ==================== -->
+    <section class="section" id="program">
+      <p class="eyebrow reveal">HOW THE PROGRAM WORKS</p>
+      <h2 class="display reveal">BUILT FOR BOYS &mdash; AND THEIR PARENTS</h2>
+
+      <div class="program">
+        <article class="program__block reveal">
+          <h3>KEYNOTE WELCOME</h3>
+          <p>It&rsquo;s imperative we have buy-in from not just the boys, but parents as well.
+            We want to be the thermostat &mdash; setting the temperature &mdash; not the thermometer
+            that just checks it. A welcome keynote for boys and their parents gives a clear picture
+            of who the program is really for: their boys.</p>
+        </article>
+        <article class="program__block reveal">
+          <h3>WEEKLY &ldquo;IN-BETWEEN&rdquo; ZOOM SESSIONS</h3>
+          <p>Live Zoom sessions held once a week give mentees the chance to ask questions and share
+            challenges, struggles, and victories between in-person sessions &mdash; designed to
+            include fun learning and stay focused on the mentees, not the mentor-coach.</p>
+        </article>
+        <article class="program__block reveal">
+          <h3>TEXT &amp; SOCIAL MEDIA</h3>
+          <p>Encouraging text messages and social media provide 24/7 access to training, with
+            Q&amp;A sessions that allow anonymity for parents and boys. Full archive access, with
+            all content subject to review for appropriateness.</p>
+        </article>
       </div>
+    </section>
+
+    <!-- ====================== OFFERS (kept from Round 4) ================ -->
+    <section class="section section--tint" id="offers">
+      <p class="eyebrow reveal">WORK WITH US</p>
+      <h2 class="display reveal">IN YOUR CORNER</h2>
+      <p class="lede reveal">For schools, districts, youth programs &amp; nonprofits.</p>
 
       <div class="offers__grid">
         <article class="offer reveal">
@@ -279,32 +306,53 @@
         churches, and community nonprofits.</p>
     </section>
 
-    <!-- ========================= THE FINAL BELL ========================= -->
-    <section class="section section--signup" id="signup">
-      <div class="signup__bell rope-anchor" data-side="center" aria-hidden="true">
-        <svg viewBox="0 0 64 64"><path d="M32 6c2.8 0 5 2.2 5 5v1.3C46 14.6 52 22.6 52 32v12l6 8H6l6-8V32c0-9.4 6-17.4 15-19.7V11c0-2.8 2.2-5 5-5z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M26 56a6 6 0 0 0 12 0" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+    <!-- ========================== GET INVOLVED ========================== -->
+    <section class="section" id="contact">
+      <p class="eyebrow reveal">GET INVOLVED</p>
+      <h2 class="display reveal">WE WANT TO PARTNER WITH YOU</h2>
+      <p class="lede reveal">Whether you&rsquo;re a school, a church, a youth organization, or a
+        parent &mdash; reach out and let&rsquo;s talk about bringing this program to your boys.</p>
+
+      <div class="contact">
+        <div class="contact__info reveal">
+          <ul class="contact__rows">
+            <li><span class="contact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span><a href="tel:818-929-2881">818-929-2881</a></li>
+            <li><span class="contact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span><a class="js-contact-email" href="#">dkcoco1@gmail.com</a></li>
+            <li><span class="contact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7 10c0 .7-.1 1.4-.3 2h-3.4c.1-.7.2-1.3.2-2s-.1-1.3-.2-2h3.4c.2.6.3 1.3.3 2zm-7 8c-.8 0-1.9-1.5-2.4-4h4.8c-.5 2.5-1.6 4-2.4 4zm-2.7-6c-.1-.6-.2-1.3-.2-2s.1-1.4.2-2h5.4c.1.6.2 1.3.2 2s-.1 1.4-.2 2H9.3zM5 12c0-.7.1-1.4.3-2h3.4c-.1.7-.2 1.3-.2 2s.1 1.3.2 2H5.3c-.2-.6-.3-1.3-.3-2zm7-8c.8 0 1.9 1.5 2.4 4H9.6c.5-2.5 1.6-4 2.4-4zM7.1 8H4.3a8 8 0 0 1 4.6-3.6C8.1 5.4 7.5 6.6 7.1 8zm-2.8 8h2.8c.4 1.4 1 2.6 1.8 3.6A8 8 0 0 1 4.3 16zm12.6 0h2.8a8 8 0 0 1-4.6 3.6c.8-1 1.4-2.2 1.8-3.6zm0-8c-.4-1.4-1-2.6-1.8-3.6A8 8 0 0 1 19.7 8h-2.8z"/></svg></span><a href="https://darrylkincy.com/">darrylkincy.com</a></li>
+            <li><span class="contact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><span>219 N. Loop 336 E. #13105, Conroe, TX 77301</span></li>
+          </ul>
+          <nav class="contact__social" aria-label="Social links">
+            <a href="https://www.youtube.com/@KOrnerman-train2win" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+            <a href="https://www.linkedin.com/in/darryl-kincy-10448619/" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          </nav>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cfFirst">FIRST NAME</label>
+            <input type="text" id="cfFirst" name="firstName" placeholder="First name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="cfLast">LAST NAME</label>
+            <input type="text" id="cfLast" name="lastName" placeholder="Last name" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label for="cfEmail">EMAIL ADDRESS</label>
+            <input type="email" id="cfEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="cfNeeds">BRIEFLY DESCRIBE YOUR NEEDS</label>
+            <textarea id="cfNeeds" name="needs" rows="5" placeholder="Tell us about your school, group, or organization..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Submit</button>
+          <p class="contact__msg" id="contactMsg" role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <h2 class="signup__title reveal">JOIN THE CORNER</h2>
-      <p class="signup__sub reveal">One short letter from Darryl &mdash; lessons from the mentoring
-        room, new KOrnerman episodes, and tools for the adults raising and teaching young men.
-        No noise. No spam.</p>
-      <form class="signup__form reveal" id="signupForm" novalidate>
-        <label class="sr-only" for="signupEmail">Email address</label>
-        <input type="email" id="signupEmail" name="email" placeholder="Your email address" required autocomplete="email">
-        <button type="submit" class="btn btn--primary">I&rsquo;m In</button>
-      </form>
-      <p class="signup__msg" id="signupMsg" role="status" aria-live="polite"></p>
     </section>
 
     <!-- ============================== FOOTER ============================ -->
     <footer class="footer">
-      <p class="footer__word">TRAIN2WIN.</p>
-      <nav class="footer__social" aria-label="Social links">
-        <a href="https://www.youtube.com/@KOrnerman-train2win" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.linkedin.com/in/darryl-kincy-10448619/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://darrylkincy.com/" target="_blank" rel="noopener">darrylkincy.com</a>
-      </nav>
-      <p class="footer__legal">&copy; 2026 Darryl Kincy. All rights reserved.</p>
+      <p class="footer__legal">&copy; 2026 Taking The Lead Generation. All rights reserved.</p>
     </footer>
 
   </main>
