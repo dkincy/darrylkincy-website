@@ -1,0 +1,563 @@
+/* =============================================================================
+   KORNERMAN — The Corner™
+   A calm, steady coaching space. Dark slate canvas, one warm accent,
+   generous room to breathe. Nothing loud, nothing childish, nothing punitive.
+   ============================================================================= */
+
+/* ------------------------------ Design tokens ------------------------------ */
+:root {
+  --night: #141A21;          /* page canvas */
+  --night-deep: #0F141A;     /* header / footer */
+  --raised: #1C242E;         /* cards */
+  --raised-2: #232D39;       /* hover / nested surfaces */
+  --line: rgba(233, 236, 240, 0.09);
+  --text: #E9ECF0;
+  --text-soft: #9AA6B4;
+  --amber: #E3A84E;          /* the one warm accent */
+  --amber-deep: #C98F35;
+  --amber-soft: rgba(227, 168, 78, 0.14);
+  --ink-on-amber: #1B1508;
+  --calm-green: #7FB58B;     /* quiet affirmation (never a "grade") */
+
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --measure: 38rem;
+  --pad-x: clamp(1.1rem, 4vw, 2rem);
+  --nav-h: 64px;
+}
+
+/* --------------------------------- Reset ---------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.03rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--night);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--amber); text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* --------------------------------- Topbar --------------------------------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem var(--pad-x);
+  background: var(--night-deep);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* The attribute must win over the flex rule above (welcome screen has no nav). */
+.topbar[hidden] { display: none; }
+
+.topbar__brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+/* The corner mark: two brackets meeting — the corner of the ring. */
+.topbar__mark {
+  width: 16px; height: 16px;
+  border-left: 3px solid var(--amber);
+  border-bottom: 3px solid var(--amber);
+  border-bottom-left-radius: 3px;
+  display: inline-block;
+}
+
+.nav { display: flex; gap: 0.25rem; }
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.nav__link:hover { color: var(--text); }
+.nav__link.is-active { color: var(--amber); background: var(--amber-soft); }
+
+.nav__icon { width: 18px; height: 18px; fill: currentColor; flex: none; }
+
+/* Phone: nav becomes a fixed bottom bar (thumb reach). */
+@media (max-width: 680px) {
+  .nav {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: var(--nav-h);
+    background: var(--night-deep);
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    z-index: 30;
+    padding: 0 0.25rem env(safe-area-inset-bottom);
+  }
+  .nav__link {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.15rem;
+    font-size: 0.68rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: var(--radius-sm);
+    flex: 1;
+    text-align: center;
+  }
+  .nav__icon { width: 21px; height: 21px; }
+  body.has-nav { padding-bottom: calc(var(--nav-h) + 1rem); }
+}
+
+/* ---------------------------------- App ----------------------------------- */
+.app {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(1.4rem, 4vw, 2.6rem) var(--pad-x) 3.5rem;
+  outline: none;
+}
+
+.view { animation: view-in 0.3s ease; }
+@keyframes view-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ------------------------------- Typography ------------------------------- */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.7rem;
+}
+
+h1.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+h2.subtitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.12rem;
+  margin-bottom: 0.7rem;
+}
+
+.lede { color: var(--text-soft); max-width: var(--measure); }
+
+/* --------------------------------- Cards ---------------------------------- */
+.card {
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.4rem;
+  margin-top: 1.1rem;
+}
+
+.card--accent { border-left: 3px solid var(--amber); }
+
+.card__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.5rem;
+}
+
+/* Coach speech: how Coach's words always appear. */
+.coach-note {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.coach-note__badge {
+  flex: none;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: grid;
+  place-items: center;
+}
+
+.coach-note__who {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.2rem;
+}
+
+.coach-note__text { font-size: 1.02rem; }
+
+/* -------------------------------- Buttons --------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  text-align: center;
+}
+
+.btn--primary { background: var(--amber); color: var(--ink-on-amber); }
+.btn--primary:hover { background: var(--amber-deep); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(233, 236, 240, 0.22);
+}
+.btn--ghost:hover { border-color: var(--amber); color: var(--amber); }
+
+.btn--quiet {
+  background: transparent;
+  color: var(--text-soft);
+  padding: 0.6rem 0.9rem;
+  font-weight: 600;
+}
+.btn--quiet:hover { color: var(--text); }
+
+.btn--block { width: 100%; }
+
+.btn[disabled] { opacity: 0.45; cursor: default; }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+  align-items: center;
+}
+.btn-row--split { justify-content: space-between; }
+
+/* --------------------------------- Forms ---------------------------------- */
+.field { margin-top: 1.15rem; }
+
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.field .hint {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  margin-top: 0.35rem;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--night-deep);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--amber);
+}
+
+textarea { min-height: 8.5rem; resize: vertical; line-height: 1.6; }
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239AA6B4'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.1rem;
+}
+
+/* ------------------------------ Welcome view ------------------------------ */
+.welcome-hero { text-align: center; padding: clamp(1rem, 6vw, 3rem) 0 0.5rem; }
+
+.welcome-hero .corner-mark {
+  width: 44px; height: 44px;
+  margin: 0 auto 1.2rem;
+  border-left: 5px solid var(--amber);
+  border-bottom: 5px solid var(--amber);
+  border-bottom-left-radius: 6px;
+}
+
+.welcome-hero .title { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+.welcome-hero .lede { margin: 0.4rem auto 0; }
+
+/* ----------------------------- Home dashboard ----------------------------- */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.stat {
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 0.6rem;
+  text-align: center;
+}
+
+.stat__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--amber);
+  line-height: 1.1;
+}
+
+.stat__label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------- Lesson / journey list ------------------------- */
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.05rem 1.15rem;
+  margin-top: 0.8rem;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.lesson-item:hover { border-color: var(--amber); background: var(--raised-2); }
+
+.lesson-item__step {
+  flex: none;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  background: var(--night-deep);
+  color: var(--text-soft);
+  border: 1px solid var(--line);
+}
+
+.lesson-item.is-done .lesson-item__step {
+  background: transparent;
+  border-color: var(--calm-green);
+  color: var(--calm-green);
+}
+
+.lesson-item.is-current .lesson-item__step {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--ink-on-amber);
+}
+
+.lesson-item__body { flex: 1; min-width: 0; }
+.lesson-item__title { font-weight: 700; }
+.lesson-item__meta { font-size: 0.82rem; color: var(--text-soft); margin-top: 0.1rem; }
+
+.lesson-item__go {
+  flex: none;
+  color: var(--text-soft);
+  font-size: 1.2rem;
+}
+
+/* ----------------------------- Step progress ------------------------------- */
+.steps {
+  display: flex;
+  gap: 0.45rem;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.steps__dot {
+  height: 4px;
+  flex: 1;
+  border-radius: 999px;
+  background: var(--raised-2);
+}
+.steps__dot.is-done { background: var(--amber); }
+.steps__dot.is-now { background: var(--amber); opacity: 0.55; }
+
+.step-count {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------- Video placeholder ---------------------------- */
+.video-slot {
+  margin-top: 1.1rem;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(233, 236, 240, 0.22);
+  background: var(--night-deep);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--text-soft);
+  padding: 1rem;
+}
+
+.video-slot__play {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--amber-soft);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 0.6rem;
+}
+.video-slot__play svg { width: 20px; height: 20px; fill: var(--amber); margin-left: 3px; }
+.video-slot p { font-size: 0.88rem; }
+
+/* ------------------------------ Growth areas ------------------------------- */
+.growth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.growth-card {
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.15rem;
+}
+
+.growth-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.growth-card__work {
+  font-size: 0.84rem;
+  color: var(--text-soft);
+  margin-top: 0.3rem;
+}
+
+.growth-card__marks { margin-top: 0.7rem; display: flex; gap: 0.3rem; }
+
+.growth-card__marks span {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--raised-2);
+}
+.growth-card__marks span.lit { background: var(--amber); }
+
+/* ------------------------------- Milestones -------------------------------- */
+.milestone {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.milestone:last-child { border-bottom: none; }
+
+.milestone__dot {
+  flex: none;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--calm-green);
+  margin-top: 0.5rem;
+}
+
+.milestone__text strong { display: block; }
+.milestone__text small { color: var(--text-soft); }
+
+/* ------------------------------ Commitments -------------------------------- */
+.commitment {
+  border-left: 3px solid var(--amber);
+  background: var(--night-deep);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+}
+.commitment p { font-size: 0.98rem; }
+.commitment small { color: var(--text-soft); font-size: 0.78rem; }
+
+/* -------------------------------- Divider ---------------------------------- */
+.rule { border: none; border-top: 1px solid var(--line); margin: 1.8rem 0; }
+
+/* ------------------------------- Utilities --------------------------------- */
+.mt-0 { margin-top: 0; }
+.center { text-align: center; }
+.soft { color: var(--text-soft); }
+.small { font-size: 0.86rem; }
+.space-top { margin-top: 1.6rem; }
