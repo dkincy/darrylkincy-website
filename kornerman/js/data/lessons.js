@@ -5,16 +5,41 @@
    "Would Coach Daryl say this to Marcus while sitting across from him
     in The Corner?"
 
-   To edit or add lessons, follow the shape of any lesson below. Each one has:
-   a growth area, a weekly focus, a coach introduction, a video slot,
-   reflection questions, and one action challenge for the week.
+   To edit or add lessons, follow the shape of any lesson below. The full
+   KOrnerman lesson carries: a growth area, a weekly focus, a coach
+   introduction, a video slot, a story from Coach (optional until written),
+   reflection questions, a practice prompt to run with a real person
+   (optional until written), one action challenge for the week, and a
+   "talk it over" prompt that points the student to his real coaching
+   conversation. Screens for story/practice/talk-it-over appear
+   automatically once the content exists.
    ============================================================================= */
 
+/* The six growth qualities, from the founder's definition of growth:
+   steady development and consistent practice until healthy behavior
+   becomes the natural habit. */
 export const GROWTH_AREAS = [
-  { id: "self-control",    name: "Self-Control",    work: "Learning to pause, think, and choose — instead of react." },
-  { id: "ownership",       name: "Ownership",       work: "My choices matter, and they belong to me." },
-  { id: "decision-making", name: "Decision-Making", work: "Slowing down enough to see my options before I pick one." },
-  { id: "integrity",       name: "Integrity",       work: "My word matters. My actions matter. Character matters." },
+  { id: "self-control",            name: "Self-Control",            work: "Learning to pause, think, and choose — instead of react." },
+  { id: "ownership",               name: "Ownership",               work: "My choices matter, and they belong to me." },
+  { id: "decision-making",         name: "Decision-Making",         work: "Slowing down enough to see my options before I pick one." },
+  { id: "integrity",               name: "Integrity",               work: "My word matters. My actions matter. Character matters." },
+  { id: "emotional-regulation",    name: "Emotional Regulation",    work: "Naming what I feel so it works for me — instead of running me." },
+  { id: "personal-responsibility", name: "Personal Responsibility", work: "My growth is mine to carry. Nobody can do my reps for me." },
+];
+
+/* =============================================================================
+   THE KORNERMAN DECISION SYSTEM
+   Founder-level working draft — this framework will keep evolving, so it
+   lives here as plain data. Edit the steps and coach lines freely; every
+   screen that shows the system reads from this one place.
+   ============================================================================= */
+export const DECISION_SYSTEM = [
+  { id: "pause",      name: "Pause",                          coach: "Stop before the moment decides for you. The pause is where your power lives." },
+  { id: "breathe",    name: "Breathe",                        coach: "One slow breath. It buys your mind the time it needs." },
+  { id: "reset",      name: "Reset",                          coach: "Let the first reaction pass. That was the old default — you're not stuck with it." },
+  { id: "look-ahead", name: "Look Ahead",                     coach: "Play the tape forward. Where does each choice take you?" },
+  { id: "choose",     name: "Choose the Next Right Decision", coach: "Not the perfect decision. The next right one — and make it yours." },
+  { id: "reflect",    name: "Reflect & Learn",                coach: "Afterward, look at the moment honestly — that's what a Replay is for. Every rep teaches you something." },
 ];
 
 export const LESSONS = [

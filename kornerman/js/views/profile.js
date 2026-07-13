@@ -50,11 +50,14 @@ export function renderProfile(container, { navigate }) {
       </form>
 
       <div class="card card--accent">
-        <p class="card__label">Your privacy</p>
+        <p class="card__label">Your privacy — and your team</p>
         <p>
-          Everything you write in The Corner — your reflections, your Replays,
-          your commitments — stays on this device. It is not uploaded or shared
-          with anyone. This corner is yours.
+          Right now, everything you write in The Corner — your reflections, your
+          Replays, your commitments — is saved on this device and isn't uploaded
+          anywhere. The deal stays the same as day one: this corner runs on
+          trust, not secrecy. If it helps you grow or keeps you safe, your coach
+          or another trusted adult may look at what you've written with you.
+          Your parents are always your first team.
         </p>
       </div>
 
@@ -62,10 +65,12 @@ export function renderProfile(container, { navigate }) {
         <p class="card__label">Need to talk to someone?</p>
         <p>
           If something serious is going on — you're in danger, someone is hurting
-          you, or you're having thoughts of hurting yourself — this app isn't the
-          right tool for that moment. Reach a trusted adult, or call or text
-          <strong>988</strong> (Suicide &amp; Crisis Lifeline) any time, day or night.
-          Asking for help is a strong decision.
+          you, or you're having thoughts of hurting yourself — don't carry it
+          alone, and don't let this app be the only place you say it. Tell your
+          coach or a trusted adult, or call or text <strong>988</strong>
+          (Suicide &amp; Crisis Lifeline) any time, day or night. When you share
+          something like that, adults who can help will be brought in — that's
+          care, not punishment. Asking for help is a strong decision.
         </p>
       </div>
 

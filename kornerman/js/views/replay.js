@@ -156,7 +156,7 @@ export function renderReplay(container) {
 
         <div class="card">
           ${coachNote(profile.coach,
-            "This moment doesn't define you. What you do next is what counts — and you've already named it. I'm in your corner.")}
+            "You just ran the last step of the Decision System — Reflect & Learn. This moment doesn't define you; what you do next is what counts, and you've already named it. If you want, bring this Replay to your coach and walk through it together. I'm in your corner.")}
         </div>
 
         <div class="btn-row">

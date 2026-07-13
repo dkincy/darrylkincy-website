@@ -1,7 +1,11 @@
 /* =============================================================================
    THE CORNER™
    Where sessions happen. #/corner shows the journey; #/corner/<id> runs a
-   session: coach intro → video slot → reflection → action challenge → done.
+   session: coach intro → (story) → reflection → (practice) → challenge → done.
+   Story and practice stages appear only when the lesson provides them —
+   the full KOrnerman lesson shape lives in js/data/lessons.js.
+   A session never ends on the screen: the close points the student to his
+   real coaching conversation.
    ============================================================================= */
 
 import { store } from "../store.js";
@@ -56,17 +60,29 @@ function renderJourney(container) {
 
 /* -------------------------------- A session -------------------------------- */
 
-const STAGES = ["intro", "reflect", "challenge", "done"];
+/* Stages flex with the lesson: story and practice only appear when the
+   curriculum provides them. */
+function stagesFor(lesson) {
+  const stages = ["intro"];
+  if (lesson.story) stages.push("story");
+  stages.push("reflect");
+  if (lesson.practice) stages.push("practice");
+  stages.push("challenge", "done");
+  return stages;
+}
 
 function renderSession(container, ctx, lesson) {
   const profile = store.getProfile();
+  const STAGES = stagesFor(lesson);
   const answers = {};
   let stage = 0;
 
   function paint() {
     const name = STAGES[stage];
     if (name === "intro") paintIntro();
+    else if (name === "story") paintStory();
     else if (name === "reflect") paintReflect();
+    else if (name === "practice") paintPractice();
     else if (name === "challenge") paintChallenge();
     else paintDone();
     window.scrollTo(0, 0);
@@ -104,6 +120,39 @@ function renderSession(container, ctx, lesson) {
         <button class="btn btn--primary" data-next>I'm ready — let's talk</button>
       </div>
     `, "Sit down · Coach has something for you");
+    container.querySelector("[data-next]").addEventListener("click", next);
+  }
+
+  function paintStory() {
+    shell(`
+      <div class="card card--accent">
+        <p class="card__label">A story from Coach</p>
+        ${coachNote(profile.coach, lesson.story)}
+      </div>
+      <div class="btn-row btn-row--split">
+        <button type="button" class="btn btn--quiet" data-back>‹ Back</button>
+        <button class="btn btn--primary" data-next>What that means for me</button>
+      </div>
+    `, "Listen · A real moment, worth learning from");
+    container.querySelector("[data-back]").addEventListener("click", back);
+    container.querySelector("[data-next]").addEventListener("click", next);
+  }
+
+  function paintPractice() {
+    shell(`
+      <div class="card card--accent">
+        <p class="card__label">Practice it</p>
+        <p class="coach-note__text">${esc(lesson.practice)}</p>
+      </div>
+      <div class="card">
+        ${coachNote(profile.coach, "You don't build a new default by knowing it — you build it by running it. Try this out loud, with your coach or someone you trust.")}
+      </div>
+      <div class="btn-row btn-row--split">
+        <button type="button" class="btn btn--quiet" data-back>‹ Back</button>
+        <button class="btn btn--primary" data-next>I'll run it</button>
+      </div>
+    `, "Practice · Run the rep before life throws it");
+    container.querySelector("[data-back]").addEventListener("click", back);
     container.querySelector("[data-next]").addEventListener("click", next);
   }
 
@@ -167,7 +216,12 @@ function renderSession(container, ctx, lesson) {
       <div class="card card--accent">
         ${coachNote(profile.coach,
           `Good work today, ${profile.firstName}. You sat down, you told the truth, and you picked up a challenge. ` +
-          `That's what growth looks like — one decision at a time. I'll see you back here.`)}
+          `That's the new default we're building — deciding instead of reacting, one rep at a time. I'll see you back here.`)}
+      </div>
+      <div class="card">
+        <p class="card__label">Talk it over</p>
+        <p>${esc(lesson.talkAboutIt ||
+          "A session isn't finished on a screen. Bring today's challenge into your next conversation with your coach — what you wrote, or just how it went. That's where it becomes real.")}</p>
       </div>
       <div class="btn-row">
         <a href="#/home" class="btn btn--primary">Back to your Corner</a>

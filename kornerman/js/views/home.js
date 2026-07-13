@@ -4,7 +4,7 @@
    ============================================================================= */
 
 import { store } from "../store.js";
-import { currentLesson, coachMessageForToday } from "../data/lessons.js";
+import { LESSONS, currentLesson, coachMessageForToday, DECISION_SYSTEM } from "../data/lessons.js";
 import { esc, coachNote } from "./helpers.js";
 
 export function renderHome(container) {
@@ -28,7 +28,7 @@ export function renderHome(container) {
       <div class="card card--accent">
         <p class="card__label">This week's focus</p>
         <h2 class="subtitle mt-0">${esc(lesson.focus)}</h2>
-        <p class="soft small">Session ${lesson.order} of 5 · ${esc(lesson.title)}</p>
+        <p class="soft small">Session ${lesson.order} of ${LESSONS.length} · ${esc(lesson.title)}</p>
       </div>
 
       <div class="card">
@@ -44,6 +44,21 @@ export function renderHome(container) {
       <p class="small soft" style="margin-top:0.7rem;">
         Something happen recently? A Replay helps you slow the moment down and look at it with your coach.
       </p>
+
+      <div class="card">
+        <p class="card__label">Your corner tool · The KOrnerman Decision System</p>
+        <ol class="decision-system">
+          ${DECISION_SYSTEM.map((s) => `
+            <li>
+              <strong>${esc(s.name)}</strong>
+              <span>${esc(s.coach)}</span>
+            </li>`).join("")}
+        </ol>
+        <p class="small soft" style="margin-top:0.8rem;">
+          Old default: react. New default: decide. Six steps that work in any
+          moment — carry them with you.
+        </p>
+      </div>
 
       <hr class="rule">
 

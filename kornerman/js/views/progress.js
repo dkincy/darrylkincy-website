@@ -18,13 +18,19 @@ export function renderProgress(container) {
   const commitments = store.recentCommitments(4);
 
   const growthCards = GROWTH_AREAS.map((area) => {
-    // Each session finished in an area is one mark of work put in.
-    // Replays build decision-making and self-control every time.
+    // Placeholder rep model (measurement is a founder decision still open):
+    // each session finished in an area is one mark of work put in; Replays
+    // build decision-making, self-control, and emotional regulation (the
+    // feelings step is that rep); every commitment made is a rep of
+    // personal responsibility.
     let work = LESSONS.filter(
       (l) => l.growthArea === area.id && completed.includes(l.id)
     ).length;
-    if (area.id === "decision-making" || area.id === "self-control") {
+    if (["decision-making", "self-control", "emotional-regulation"].includes(area.id)) {
       work += counts.replays;
+    }
+    if (area.id === "personal-responsibility") {
+      work += counts.commitments;
     }
     const lit = Math.min(work, MAX_MARKS);
     const marks = Array.from({ length: MAX_MARKS }, (_, i) =>

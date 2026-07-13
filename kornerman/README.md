@@ -26,26 +26,37 @@ the public site — share the direct URL with whoever you want feedback from.
 
 | Screen | What it does |
 | --- | --- |
-| Welcome | The front door: short introduction + profile creation (first name, grade, school, coach) |
-| Home | "What is my next right step?" — weekly focus, coach message, Continue, Replay, growth summary |
-| The Corner™ | The five-session journey; each session: coach intro → video slot → reflection → action challenge |
-| Replay™ | The six-step guided reflection, one question per screen, ending on the next right decision |
-| Growth | Growth areas (Self-Control, Ownership, Decision-Making, Integrity), milestones, commitments |
-| Me | Profile editing, privacy explanation, crisis-support pointer (988), start-fresh reset |
+| Welcome | The front door: introduction, the trust & safety promises (stated up front, framed as care), profile creation |
+| Home | "What is my next right step?" — weekly focus, coach message, the KOrnerman Decision System, Continue, Replay, growth summary |
+| The Corner™ | The session journey; each session: coach intro → video slot → (story) → reflection → (practice) → action challenge → talk it over with your coach |
+| Replay™ | The six-step guided reflection, one question per screen, ending on the next right decision — the "Reflect & Learn" step of the Decision System |
+| Growth | The six growth qualities (Self-Control, Ownership, Decision-Making, Integrity, Emotional Regulation, Personal Responsibility), milestones, commitments |
+| Me | Profile editing, privacy & trust explanation, crisis-support pointer (988), start-fresh reset |
 
-## Where the student's data lives
+## Where the student's data lives — and what the student is told
 
-Everything a student writes stays in his browser's local storage, on his own
-device. Nothing is uploaded or shared. That's the right shape for a prototype
-(no real accounts for minors), and `js/store.js` is the single doorway to that
-data — when a real account system arrives, it replaces the internals of that
-one file and every screen keeps working.
+In this prototype, everything a student writes stays in his browser's local
+storage, on his own device — nothing is uploaded. That's the right shape for a
+prototype (no real accounts for minors), and `js/store.js` is the single
+doorway to that data — when a real account system arrives, it replaces the
+internals of that one file and every screen keeps working.
+
+The **promise shown to the student** is deliberately ahead of the technology:
+per the founder's Trust & Confidentiality and Safety decisions, students are
+told from the first screen that this corner runs on trust, not secrecy — that
+trusted adults may review what they write when it supports their growth or
+protects their safety, and that disclosures involving danger, abuse, or harm
+bring in adults who can help, as an act of care. Never re-promise total
+secrecy; that promise can only be made once.
 
 ## Editing the coaching content
 
-All lesson content, growth areas, and Coach's rotating dashboard messages live
-in **`js/data/lessons.js`**. Each lesson is a plain block of text fields —
-title, focus, coach introduction, reflection questions, weekly challenge.
+All lesson content, the six growth qualities, the KOrnerman Decision System
+(a founder-level working draft — edit it as it evolves), and Coach's rotating
+dashboard messages live in **`js/data/lessons.js`**. Each lesson is a plain
+block of text fields — title, focus, coach introduction, reflection questions,
+weekly challenge, plus optional `story`, `practice`, and `talkAboutIt` fields
+whose screens appear automatically once the content is written.
 Edit freely; the only rule is the voice test:
 
 > "Would Coach Daryl say this to Marcus while sitting across from him in

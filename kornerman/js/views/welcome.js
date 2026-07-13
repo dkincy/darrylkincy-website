@@ -21,11 +21,24 @@ export function renderWelcome(container, { navigate }) {
       </div>
 
       <div class="card card--accent">
-        <p class="card__label">Before we start</p>
+        <p class="card__label">Before we start — how The Corner works</p>
         <p>
           This is a place where you can be honest. Nobody here is grading you,
-          and nobody is judging you. Everything you write stays on this device —
-          it's between you and your coach.
+          and nobody is judging you. What you write here matters, because you
+          matter — and this corner runs on trust, not secrecy. If it ever helps
+          you grow or keeps you safe, your coach or another trusted adult may
+          look at what you've written with you. Your parents are still your
+          first team, and everyone in your corner works together for you.
+        </p>
+      </div>
+
+      <div class="card">
+        <p class="card__label">One promise up front</p>
+        <p>
+          If you ever share that you're in danger, that someone is hurting you,
+          or that someone else could get hurt, Coach will bring in the adults
+          who can help. Not as punishment — because you matter too much to be
+          left carrying that alone.
         </p>
       </div>
 
